@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return <div>
+        <h1>Meu App</h1>
         <nav>
-          <h1>Teste</h1>
           <ul>
             <li>
               <Link to="/">Home</Link>
