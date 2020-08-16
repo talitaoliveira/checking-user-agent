@@ -5,7 +5,8 @@ on:
     branches: [master]
 
 jobs:
-  build-and-deploy:
+  install-and-tests:
+    name: 1.Install dependencies and run all tests
     runs-on: ubuntu-latest
 
     steps:
@@ -18,9 +19,19 @@ jobs:
       - name: Run tests
         run: npm run test:nowatch
 
-      - name: Run tests
+  build:
+    name: 2.Build project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
         run: npm run build
 
+  deploy:
+    name: 3.Deploy to gh-pages
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
