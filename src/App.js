@@ -1,16 +1,29 @@
 import React from "react";
-import Header from "./components/Header/Header";
 import Users from "./components/Pages/Users/Users";
 import Home from "./components/Pages/Home/Home";
 import About from "./components/Pages/About/About";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Header />
+    <div>
+        <div>
+            <h1>Meu App</h1>
+            <nav>
+            <ul>
+                <li>
+                <Link to="/">Home</Link>
+                </li>
+                <li>
+                <Link to="/about">About</Link>
+                </li>
+                <li>
+                <Link to="/users">Users</Link>
+                </li>
+            </ul>
+            </nav>
+        </div>
         <Switch>
           <Route path="/about">
             <About />
@@ -22,8 +35,7 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
-      </div>
-    </Router>
+    </div>
   );
 };
 
