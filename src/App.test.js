@@ -12,6 +12,6 @@ describe('App component', () => {
             <App />
             </Router>
         )
-        expect(getByText(/\bMeu App\b/i)).toBeInTheDocument();
+        expect(getByText(/\bMeu App teste\b/i)).toBeInTheDocument();
     })
 })
